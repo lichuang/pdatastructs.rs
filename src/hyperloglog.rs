@@ -79,7 +79,7 @@ use crate::hyperloglog_data::{
 /// - ["Appendix to HyperLogLog in Practice: Algorithmic Engineering of a State of the Art
 ///   Cardinality Estimation Algorithm", Stefan Heule, Marc Nunkesser, Alexander Hall, 2016](https://goo.gl/iU8Ig)
 /// - [Wikipedia: HyperLogLog](https://en.wikipedia.org/wiki/HyperLogLog)
-#[derive(Clone)]
+#[derive(serde::Serialize, serde::Deserialize, Clone, PartialEq, Eq)]
 pub struct HyperLogLog<T, B = BuildHasherDefault<DefaultHasher>>
 where
     T: Hash + ?Sized,
